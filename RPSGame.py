@@ -10,12 +10,17 @@ player = False
 # make teh computer chose a weapon from the random
 computer_choice = choices[randint(0,2)]
 
+# Player Lives with two variables
+compLives = 3
+playerLives = 3
+
+
 # print the choise to the terminal window
 print("Computer chooses: ", computer_choice)
 
 
 # set up our loop 
-while player is False:
+while compLives > 0 and playerLives > 0:
     #set player to True by making a selection
     print("Choose your weapon!")
     player=input("Rock, Paper or Scissors?\n")
@@ -24,27 +29,29 @@ while player is False:
 
     if player == computer_choice:
        print("Tie! You live to shoot another day")
-       elif player == "Rock":
+    elif player == "Rock":
        	 if computer_choice == "Paper":
-       	    Print("You Lose! Paper covers Rock")
+       	    print("You Lose! Paper covers Rock")
 
-       	else:
-       	    print("Yon Win!", player "smashes", computer_choice)
+         else:
+       	    print("Yon Win!", player, "smashes", computer_choice,)
+            compLives = compLives - 1
 
     elif player == "Paper":
         if computer_choice == "Scissors":
-         Print("You Lose!", computer_choice, "cut", player)
+         print("You Lose!", computer_choice, "cut", player,)
         else:
-            print("You won!" player, "covers", computer_choice)
+            print("You Won!", player, "covers", computer_choice,)
+            compLives = compLives - 1
 
     elif player == "Scissors":
          if computer_choice == "Rock":
-            Print ("You lose!", computer_choice, "smashes", player)
-        else:
-             Print("You Win!", player, "cut", computer_choice)
+            print ("You Lose!", computer_choice, "smashes", player,)
+         else:
+             print("You Win!", player, "cut", computer_choice,)
     elif player ==  "quit":
        exit()
     else:
-         Print("Check your spelling...that's not a valid choice\n")
+         print("Check your spelling...that's not a valid choice\n")
 
-    # reset the game looop and start over again.     
+    # reset the game loop and start over again.     
